@@ -1,5 +1,8 @@
 allennlp==0.8
-# joblib==0.12.3
 scikit-learn==0.20.3
 overrides==3.1.0
 transformers==2
+
+# error on tf import
+# tensorboard.TensorShapeProto.dim: "tensorboard.TensorShapeProto.Dim" seems to be defined in "tensorboardX/src/tensor_shape.proto", which is not imported by "tensorboard/compat/proto/tensor_shape.proto".  To use it here, please add the necessary import.
+tensorboardX==1.8
