@@ -30,6 +30,7 @@
     "validation_data_path": "data/Val1.csv",
     "test_data_path": "data/Test1.csv",
     "trainer": {
+        "cuda_device": 0,
         "num_epochs": 30,
         "optimizer": {
             "type": "adagrad",
