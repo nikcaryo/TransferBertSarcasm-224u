@@ -74,10 +74,11 @@ def main(prog: str = None,
     if 'func' in dir(args):
         # Import any additional modules needed (to register custom classes).
         for package_name in getattr(args, 'include_package', ()):
-            try:
-                import_submodules(package_name)
-            except TypeError:
-                import pdb; pdb.set_trace()
+            import_submodules(package_name)
+            # try:
+            #     import_submodules(package_name)
+            # except TypeError:
+            #     import pdb; pdb.set_trace()
         args.func(args)
     else:
         parser.print_help()
