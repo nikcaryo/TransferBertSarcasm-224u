@@ -3,7 +3,7 @@
     "pytorch_seed": 2335,
     "numpy_seed": 7005,
       "dataset_reader": {
-          "type": "colbert_reader",
+          "type": "shortJokes_reader",
           "bert_model_name": "bert-base-uncased",
           "token_indexers": {
               "bert": {
@@ -26,9 +26,9 @@
           "type": "bert_classifier",
           "bert_model_name": "bert-base-uncased"
       },
-      "train_data_path": "data/colbert_short_jokes/train.csv",
-      "validation_data_path": "data/colbert_short_jokes/dev.csv",
-      "test_data_path": "data/colbert_short_jokes/test.csv",
+      "train_data_path": "data/short_jokes/train.csv",
+      "validation_data_path": "data/short_jokes/shortJokes_dev.csv",
+      "test_data_path": "data/short_jokes/shortJokes_test.csv",
       "trainer": {
           "num_epochs": 30,
           "optimizer": {
