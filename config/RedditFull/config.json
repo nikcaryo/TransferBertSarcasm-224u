@@ -32,9 +32,9 @@
             }
         }
     },
-    "train_data_path": "data/reddit_full/train.csv",
-    "validation_data_path": "data/reddit_full/dev.csv",
-    "test_data_path": "data/reddit_full/test.csv",
+    "train_data_path": "data/reddit_full/redditFull_clean_train.csv",
+    "validation_data_path": "data/reddit_full/redditFull_clean_dev.csv",
+    "test_data_path": "data/reddit_full/redditFull_clean_test.csv",
     "trainer": {
         "grad_clipping": 5,
         "num_epochs": 30,
