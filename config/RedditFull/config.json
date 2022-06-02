@@ -2,42 +2,48 @@
     "random_seed": 21016,
     "pytorch_seed": 2335,
     "numpy_seed": 7005,
-      "dataset_reader": {
-          "type": "colbert_reader",
-          "bert_model_name": "bert-base-uncased",
-          "token_indexers": {
-              "bert": {
-                  "type": "bert-pretrained",
-                  "pretrained_model": "bert-base-uncased"
-              }
-          }
-      },
-      "iterator": {
-          "type": "bucket",
-          "batch_size": 8,
-          "sorting_keys": [
-              [
-                  "quote_response",
-                  "num_tokens"
-              ]
-          ]
-      },
-      "model": {
-          "type": "bert_classifier",
-          "bert_model_name": "bert-base-uncased"
-      },
-      "train_data_path": "data/colbert_short_jokes/train.csv",
-      "validation_data_path": "data/colbert_short_jokes/dev.csv",
-      "test_data_path": "data/colbert_short_jokes/test.csv",
-      "trainer": {
-          "num_epochs": 30,
-          "optimizer": {
-              "type": "adagrad",
-              "lr": 0.0001
-          },
-          "patience": 3,
-          "validation_metric": "+average_F1"
-      },
-      "evaluate_on_test": true
-  }
-  
+    "dataset_reader": {
+        "type": "redditFull_reader",
+        "bert_model_name": "bert-base-uncased",
+        "token_indexers": {
+            "bert": {
+                "type": "bert-pretrained",
+                "pretrained_model": "bert-base-uncased"
+            }
+        }
+    },
+    "iterator": {
+        "type": "bucket",
+        "batch_size": 16,
+        "sorting_keys": [
+            [
+                "quote_response",
+                "num_tokens"
+            ]
+        ]
+    },
+    "model": {
+        "type": "bert_classifier",
+        "bert_model_name": "bert-base-uncased",
+        "text_field_embedder": {
+            "bert": {
+                "type": "bert-pretrained",
+                "pretrained_model": "bert-base-uncased"
+            }
+        }
+    },
+    "train_data_path": "data/reddit_full/train.csv",
+    "validation_data_path": "data/reddit_full/dev.csv",
+    "test_data_path": "data/reddit_full/test.csv",
+    "trainer": {
+        "grad_clipping": 5,
+        "num_epochs": 30,
+        "optimizer": {
+            "type": "adagrad",
+            "lr": 0.0001
+        },
+        "patience": 3,
+        "validation_metric": "+average_F1"
+    },
+    "evaluate_on_test": true
+}
