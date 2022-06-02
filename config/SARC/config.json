@@ -30,6 +30,7 @@
     "validation_data_path": "data/sarc/auth-dev.txt",
     "test_data_path": "data/sarc/auth-test.txt",
     "trainer": {
+        "cuda-device": 0,
         "num_epochs": 30,
         "optimizer": {
             "type": "adagrad",
