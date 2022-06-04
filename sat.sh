@@ -1,4 +1,4 @@
-python3 scripts/train_local.py train config/ShortJokes/config.json -s ShortJokesInt --include-package my_library
+python3 scripts/train_local.py train config/ShortJokes/config.json -s ShortJokesInt --include-package my_library --recover
 
 python3 scripts/train_local.py transfer config/SARC/config.json -s ColbertFine --transfer-model ColbertShortInt/best.th --include-package my_library
 python3 scripts/train_local.py transfer config/SARC/config.json -s PunsFine --transfer-model PunsInt/best.th --include-package my_library
