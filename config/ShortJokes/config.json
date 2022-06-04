@@ -30,6 +30,7 @@
       "validation_data_path": "data/short_jokes/shortJokes_dev.csv",
       "test_data_path": "data/short_jokes/shortJokes_test.csv",
       "trainer": {
+          "cuda_device": 0,
           "num_epochs": 30,
           "optimizer": {
               "type": "adagrad",
